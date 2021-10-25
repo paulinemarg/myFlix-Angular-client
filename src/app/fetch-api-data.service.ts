@@ -4,6 +4,7 @@ import { catchError } from 'rxjs/internal/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://backend-myflix.herokuapp.com/';
@@ -12,7 +13,7 @@ const apiUrl = 'https://backend-myflix.herokuapp.com/';
 })
 export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
   /**
    * Making an api call for the user registration endpoint
