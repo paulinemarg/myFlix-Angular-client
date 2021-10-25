@@ -23,11 +23,15 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 import { MovieDirectorComponent } from './movie-director/movie-director.component';
 import { MovieGenreComponent } from './movie-genre/movie-genre.component';
+import { MovieSynopsisComponent } from './movie-synopsis/movie-synopsis.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
   { path: 'profile', component: UserProfileComponent },
+  { path: 'genres', component: MovieGenreComponent },
+  { path: 'directors', component: MovieDirectorComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -41,7 +45,9 @@ const appRoutes: Routes = [
     UserProfileComponent,
     EditUserProfileComponent,
     MovieDirectorComponent,
-    MovieGenreComponent
+    MovieGenreComponent,
+    MovieSynopsisComponent,
+    NavbarComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -58,7 +64,7 @@ const appRoutes: Routes = [
     MatCardModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [MovieCardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
