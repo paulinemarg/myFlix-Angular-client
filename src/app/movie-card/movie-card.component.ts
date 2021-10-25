@@ -4,6 +4,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MovieDirectorComponent } from '../movie-director/movie-director.component';
 import { MovieGenreComponent } from '../movie-genre/movie-genre.component';
+import { MovieSynopsisComponent } from '../movie-synopsis/movie-synopsis.component';
+import { Router } from '@angular/router';
+
+const username = localStorage.getItem('user');
 
 @Component({
   selector: 'app-movie-card',
@@ -17,6 +21,7 @@ export class MovieCardComponent {
 
   constructor(
     public fetchApiData: FetchApiDataService,
+    public router: Router,
     public dialog: MatDialog,
     public snackBar: MatSnackBar,
   ) { }
@@ -29,6 +34,7 @@ export class MovieCardComponent {
   ngOnInit(): void {
     this.getMovies();
     this.getUserFavorites();
+    this.getUser(username);
   }
 
   getMovies(): void {
@@ -38,6 +44,30 @@ export class MovieCardComponent {
       return this.movies;
     });
   }
+  /**
+   * Gets the user information
+   * @param username 
+   */
+  getUser(username: any): void {
+    this.fetchApiData.getUser(username).subscribe((resp: any) => {
+      this.user = resp;
+      console.log(this.user);
+      return this.user;
+    })
+  }
+  /**
+   * Opens the synopsis dialog
+   * @param title 
+   * @param imageUrl 
+   * @param description 
+   */
+  openSynopsisDialog(title: string, imageUrl: any, description: string): void {
+    this.dialog.open(MovieSynopsisComponent, {
+      data: { title, imageUrl, description, },
+      //width: '50%'
+    })
+  }
+
   /**
    * Opens the genre dialog
    * @param name 
@@ -105,8 +135,8 @@ export class MovieCardComponent {
    */
   getUserFavorites(): void {
     const user = localStorage.getItem('user');
-    this.fetchApiData.getUser(user).subscribe((resp: any) => {
-      this.favoriteMovies = resp.FavoriteMovies;
+    this.fetchApiData.getUser(user).subscribe((res: any) => {
+      this.favoriteMovies = res.FavoriteMovies;
       //console.log(this.faves);
       return this.favoriteMovies;
     });
