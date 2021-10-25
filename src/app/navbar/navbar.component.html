@@ -1,0 +1,25 @@
+<div class="navbar">
+  <div class="container">
+    <button mat-button class="button" routerLink="/movies">
+      myFlix
+    </button>
+
+    <div class="links">
+      <button class="button" mat-button (click)="toMovies()">
+        Movies
+      </button>
+      <button class="button" mat-button (click)="toGenres()">
+        Genres
+      </button>
+      <button class="button" mat-button (click)="toDirectors()">
+        Directors
+      </button>
+      <button class="button" mat-button (click)="toProfile()">
+        Profile
+      </button>
+      <button class="button" mat-button (click)="logOut()">
+        Log Out
+      </button>
+    </div>
+  </div>
+</div>
