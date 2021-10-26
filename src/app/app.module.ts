@@ -25,13 +25,15 @@ import { MovieDirectorComponent } from './movie-director/movie-director.componen
 import { MovieGenreComponent } from './movie-genre/movie-genre.component';
 import { MovieSynopsisComponent } from './movie-synopsis/movie-synopsis.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DirectorsComponent } from './directors/directors.component';
+import { GenresComponent } from './genres/genres.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
   { path: 'profile', component: UserProfileComponent },
-  { path: 'genres', component: MovieGenreComponent },
-  { path: 'directors', component: MovieDirectorComponent },
+  { path: 'genres', component: GenresComponent },
+  { path: 'directors', component: DirectorsComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -47,7 +49,9 @@ const appRoutes: Routes = [
     MovieDirectorComponent,
     MovieGenreComponent,
     MovieSynopsisComponent,
-    NavbarComponent
+    NavbarComponent,
+    DirectorsComponent,
+    GenresComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
