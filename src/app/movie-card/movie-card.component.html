@@ -18,10 +18,12 @@
         Synopsis
       </button>
 
-      <button class="favorites" *ngIf="!isFavorited(movie._id)" mat-button (click)="addToFavorites(movie._id)">
+      <button class="favorites" *ngIf="!setFavoriteStatus(movie._id)" mat-button
+        (click)="addToFavorites(movie._id, movie.Title)">
         <mat-icon>favorite_border</mat-icon>
       </button>
-      <button class="favorites" *ngIf="isFavorited(movie._id)" mat-button (click)="removeFromFavorites(movie._id)">
+      <button class="favorites" *ngIf="setFavoriteStatus(movie._id)" mat-button
+        (click)="removeFromFavorites(movie._id, movie.Title)">
         <mat-icon>favorite</mat-icon>
       </button>
     </mat-card-actions>
