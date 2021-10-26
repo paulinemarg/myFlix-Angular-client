@@ -1,9 +1,20 @@
 <app-navbar></app-navbar>
-<div class="director__container">
-  <h3 mat-dialog-title class="director__title">Director
-    {{ data.name }} {{ data.birthyear }}
-  </h3>
-  <mat-dialog-content class="director__content">
-    {{ data.bio }} {{data.filmography}}
-  </mat-dialog-content>
+<div id="body">
+  <div id="main-content">
+    <mat-dialog-content>
+      <div *ngFor=" let director of directors">
+        {{data.image}}
+        <div *ngIf="data.name == director.name">
+          <p>
+            {{director.Bio}} {{director.Birthyear}}>
+          </p>
+          <p>
+            {{director.Filmography}}
+          </p>
+        </div>
+      </div>
+    </mat-dialog-content>
+  </div>
+
+
 </div>
