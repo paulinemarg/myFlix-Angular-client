@@ -18,6 +18,8 @@ export class MovieSynopsisComponent implements OnInit {
       title: string,
       imageUrl: any,
       description: string,
+      releaseYear: string,
+      rating: string,
     }
   ) { }
 
