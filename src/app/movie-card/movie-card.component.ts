@@ -61,9 +61,9 @@ export class MovieCardComponent {
    * @param imageUrl 
    * @param description 
    */
-  openSynopsisDialog(title: string, imageUrl: any, description: string): void {
+  openSynopsisDialog(title: string, description: string, releaseYear: string, rating: string): void {
     this.dialog.open(MovieSynopsisComponent, {
-      data: { title, imageUrl, description, },
+      data: { title, description, releaseYear, rating },
       //width: '50%'
     })
   }
