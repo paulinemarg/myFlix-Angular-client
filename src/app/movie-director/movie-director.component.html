@@ -1,13 +1,9 @@
-<mat-card class="director">
-  <mat-card-header>
-    <mat-card-subtitle class="subtitle">Director</mat-card-subtitle>
-    <mat-card-title>{{data.name}}</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p> </p>
-    <p>{{data.image}}</p>
-    <p>DOB: {{data.birthyear}}</p>
-    <p>{{data.bio}}</p>
-    <p>Filmography: {{data.filmography}}</p>
-  </mat-card-content>
-</mat-card>
+<app-navbar></app-navbar>
+<div class="director__container">
+  <h3 mat-dialog-title class="director__title">Director
+    {{ data.name }} {{ data.birthyear }}
+  </h3>
+  <mat-dialog-content class="director__content">
+    {{ data.bio }} {{data.filmography}}
+  </mat-dialog-content>
+</div>
