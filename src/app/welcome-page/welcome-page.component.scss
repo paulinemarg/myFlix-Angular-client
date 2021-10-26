@@ -1,0 +1,25 @@
+.main-page {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+
+.loginBtn {
+  width: 150px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.registerBtn {
+  margin-top: 15px;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.title {
+  color: #e83939;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
