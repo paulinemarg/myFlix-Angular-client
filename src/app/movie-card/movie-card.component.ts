@@ -16,7 +16,8 @@ const username = localStorage.getItem('user');
 })
 export class MovieCardComponent {
   movies: any[] = [];
-  favoriteMovies: any[] = [];
+  favorites: any[] = [];
+  genres: any[] = [];
   user: any = {};
 
   constructor(
@@ -64,7 +65,6 @@ export class MovieCardComponent {
   openSynopsisDialog(title: string, description: string, releaseYear: string, rating: string): void {
     this.dialog.open(MovieSynopsisComponent, {
       data: { title, description, releaseYear, rating },
-      //width: '50%'
     })
   }
 
@@ -115,9 +115,8 @@ export class MovieCardComponent {
    * Removes the movie with the assigned id from favorites
    * @param movieId 
    */
-  removeFromFavorites(movieId: any,) {
-    console.log(movieId);
-    this.fetchApiData.deleteMovie(movieId).subscribe((resp: any) => {
+  removeFromFavorites(id: string, Title: string): void {
+    this.fetchApiData.removeFromFavorites(id).subscribe((resp: any) => {
 
       console.log(resp);
       this.snackBar.open(`The selected movie has been added to your favorites.`, 'OK', {
@@ -136,19 +135,13 @@ export class MovieCardComponent {
   getUserFavorites(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((res: any) => {
-      this.favoriteMovies = res.FavoriteMovies;
+      this.favorites = res.FavoriteMovies;
       //console.log(this.faves);
-      return this.favoriteMovies;
+      return this.favorites;
     });
   }
-  /**
-   * Checks wheather if the movie with the assigned id,
-   * is already added to the favorites or not.
-   * @param id 
-   * @returns 
-   */
-  isFavorited(id: any): any {
-    if (this.favoriteMovies.includes(id)) {
+  setFavoriteStatus(id: any): any {
+    if (this.favorites.includes(id)) {
       return true;
     } else {
       return false;
