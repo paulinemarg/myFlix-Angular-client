@@ -18,8 +18,7 @@
         Synopsis
       </button>
 
-      <button class="favorites" *ngIf="!setFavoriteStatus(movie._id)" mat-button
-        (click)="addToFavorites(movie._id, movie.Title)">
+      <button class="favorites" *ngIf="!setFavoriteStatus(movie._id)" mat-button (click)="addToFavorites(movie._id)">
         <mat-icon>favorite_border</mat-icon>
       </button>
       <button class="favorites" *ngIf="setFavoriteStatus(movie._id)" mat-button
