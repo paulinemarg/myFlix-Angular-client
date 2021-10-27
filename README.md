@@ -2,9 +2,38 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
+## Description
+
+This is a single-page application build using Angular that is connected to the [myFlix-backend](https://github.com/paulinemarg/myFlix-backend). Users are able to create an account and browse their favorite movies. They can modify account information, add or remove movies from their list of favorites, or delete their account.
+
+## Technologies
+
+This app is built using the MEAN stack of technlogies, (MongoDB, Angular, Express.js, Node.js. The app uses Angular Material throughout as well.
+
+
+## Setting up the tools:
+
+Make sure you have Angular CLI installed globally. 
+
+```
+$ npm install --global @angular/cli@latest
+```
+
+After downloading the code, install the necessary modules by running:
+
+```
+$ npm install
+```
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+By default the app will run a local server on port: 4200
+
+```
+$ ng serve
+```
+
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
