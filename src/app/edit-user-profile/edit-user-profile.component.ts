@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FetchApiDataService } from '../fetch-api-data.service';
-
+const username = localStorage.getItem('user');
 @Component({
   selector: 'app-edit-user-profile',
   templateUrl: './edit-user-profile.component.html',
@@ -13,10 +13,10 @@ export class EditUserProfileComponent implements OnInit {
   /**
    * Required input fields for updating the user information
    */
-  @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
+  @Input() userData = { Username: username, Password: '', Email: '', Birthday: '' };
 
   constructor(
-    public fetchApiData: FetchApiDataService,
+    public fetchUserData: FetchApiDataService,
     public dialogRef: MatDialogRef<EditUserProfileComponent>,
     public snackBar: MatSnackBar,
   ) { }
@@ -28,9 +28,10 @@ export class EditUserProfileComponent implements OnInit {
    * Edits the user information
    */
   editUserInfo(): void {
-    this.fetchApiData.editUser(this.userData).subscribe(
+    this.fetchUserData.editUser(this.userData).subscribe(
       (res) => {
         this.dialogRef.close();
+        localStorage.setItem('user', res.Username);
         this.snackBar.open('Profile updated successfully!', 'Ok', {
           duration: 2000,
         });
@@ -49,3 +50,4 @@ export class EditUserProfileComponent implements OnInit {
 
   }
 }
+
