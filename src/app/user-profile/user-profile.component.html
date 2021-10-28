@@ -9,9 +9,6 @@
         <span>Username: </span> {{ user.Username }}
         <br>
         <span>Email: </span>{{ user.Email }}
-        <br>
-        <span>Birthday: </span>{{ user.Birth | date: "dd/MM/yyyy":"UTC" || "N/A" }}
-        <br>
       </mat-card-content>
       <mat-card-actions>
         <button mat-raised-button class="button-edit" (click)="openEditUserProfileDialog()">
