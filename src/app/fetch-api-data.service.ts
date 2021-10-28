@@ -5,10 +5,11 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
+
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://backend-myflix.herokuapp.com/';
 const token = localStorage.getItem('token');
-const user = localStorage.getItem('user');
+
 @Injectable({
   providedIn: 'root'
 })
@@ -161,8 +162,9 @@ export class FetchApiDataService {
    * @param userData - username and password
    * @returns success/error message
    */
-  editUser(userDetails: any): Observable<any> {
-    return this.http.put(apiUrl + `users/${user}`, userDetails, {
+  editUser(userData: any): Observable<any> {
+    const username = localStorage.getItem('user');
+    return this.http.put(apiUrl + `users/${username}`, userData, {
       headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
@@ -179,7 +181,7 @@ export class FetchApiDataService {
    * @returns status message: success or error
    */
   addMovie(movieId: any): Observable<any> {
-    const username = localStorage.getItem('username');
+    const username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
     console.log(apiUrl + `users/${username}/movies/${movieId}`);
     return this.http.post(apiUrl + `users/${username}/movies/${movieId}`, {},
@@ -200,6 +202,7 @@ export class FetchApiDataService {
      * @returns success/error message
      */
   deleteUser(): Observable<any> {
+    const user = localStorage.getItem('username');
     return this.http.delete(apiUrl + `users/${user}`, {
       headers: new HttpHeaders(
         {
@@ -215,6 +218,7 @@ export class FetchApiDataService {
      * @returns Array - favorite movies
      */
   getFavorites(): Observable<any> {
+    const user = localStorage.getItem('username');
     return this.http.get(apiUrl + `users/${user}/movies`, {
       headers: new HttpHeaders(
         {
@@ -230,23 +234,26 @@ export class FetchApiDataService {
    * @param id, username (Injected automatically, username extracted from login params)
    * @returns success/error message
    */
-  addToFavorites(id: string): Observable<any> {
-    return this.http.post(apiUrl + `users/${user}/movies/${id}`, id, {
-      headers: new HttpHeaders(
-        {
-          Authorization: 'Bearer ' + token,
-        })
-    }).pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
+  addToFavorites(movieId: any): Observable<any> {
+    const username = localStorage.getItem('user');
+    return this.http.post(apiUrl + `users/${username}/movies/${movieId}`, {},
+      {
+        headers: new HttpHeaders(
+          {
+            Authorization: 'Bearer ' + token,
+          })
+      }).pipe(
+        map(this.extractResponseData),
+        catchError(this.handleError)
+      );
   }
   /**
      * @param id, username (Injected automatically, username extracted from login params)
      * @returns success/error message
      */
-  removeFromFavorites(id: string): Observable<any> {
-    return this.http.delete(apiUrl + `users/${user}/movies/${id}`, {
+  removeFromFavorites(movieid: any): Observable<any> {
+    const username = localStorage.getItem('user');
+    return this.http.delete(apiUrl + `users/${username}/movies/${movieid}`, {
       headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
