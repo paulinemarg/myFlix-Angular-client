@@ -16,7 +16,6 @@ export class MovieSynopsisComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA)
     public data: {
       title: string,
-      imageUrl: any,
       description: string,
       releaseYear: string,
       rating: string,
