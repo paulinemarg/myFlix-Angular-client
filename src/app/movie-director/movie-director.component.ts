@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 
 @Component({
@@ -22,10 +22,9 @@ export class MovieDirectorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getDirector();
+    this.getADirector();
   }
-
-  getDirector(): void {
+  getADirector(): void {
     this.fetchApiData.getDirectors().subscribe((response: any) => {
       this.directors = response;
       // console.log(this.directors);
