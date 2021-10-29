@@ -1,7 +1,21 @@
 <div id="body">
   <div id="main-content">
     <mat-dialog-content>
-      <div *ngFor="let director of directors">{{director.Name}}</div>
+     <h1>
+        {{data.Name}}
+      </h1>
+      <div *ngFor=" let director of directors">
+        <div *ngIf="data.Name == director.Name">
+          <img class="image" src={{director.Image}} alt={{director.Name}}>
+          <p>
+           {{director.Bio}}
+          </p>
+          <p class="p2">
+            Born: {{director.Birth}}
+          </p>
+          <p> Filmography: {{director.Filmography}}</p>
+        </div>
+      </div>
     </mat-dialog-content>
   </div>
 </div>
