@@ -1,7 +1,14 @@
 <div id="body">
   <div id="main-content">
     <mat-dialog-content>
-      <div *ngFor="let genre of genres">{{genre.Name}}</div>
+      <h1>
+        {{data.Name}}
+      </h1>
+      <div *ngFor=" let genre of genres">
+        <p *ngIf="data.Name == genre.Name">
+          {{genre.Description}}
+        </p>
+      </div>
     </mat-dialog-content>
   </div>
 </div>
