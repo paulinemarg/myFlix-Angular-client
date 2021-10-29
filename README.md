@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
+![myflix-angular](/myflix-angular.png)
+
 ## Description
 
 This is a single-page application build using Angular that is connected to the [myFlix-backend](https://github.com/paulinemarg/myFlix-backend). Users are able to create an account and browse their favorite movies. They can modify account information, add or remove movies from their list of favorites, or delete their account.
