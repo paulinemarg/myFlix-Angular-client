@@ -18,7 +18,6 @@ export class MovieCardComponent {
   movies: any[] = [];
   favorites: any[] = [];
   genres: any[] = [];
-  user: any = {};
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -35,26 +34,13 @@ export class MovieCardComponent {
   ngOnInit(): void {
     this.getMovies();
     this.getUserFavorites();
-    this.getUser(username);
   }
 
   getMovies(): void {
-    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-      this.movies = resp;
-      console.log(this.movies);
+    this.fetchApiData.getAllMovies().subscribe((response: any) => {
+      this.movies = response;
       return this.movies;
     });
-  }
-  /**
-   * Gets the user information
-   * @param username 
-   */
-  getUser(username: any): void {
-    this.fetchApiData.getUser(username).subscribe((resp: any) => {
-      this.user = resp;
-      console.log(this.user);
-      return this.user;
-    })
   }
   /**
    * Opens the synopsis dialog
@@ -73,24 +59,28 @@ export class MovieCardComponent {
    * @param name 
    * @param description 
    */
-  openGenreDialog(name: string, description: string): void {
+  openGenreDialog(name: string): void {
     this.dialog.open(MovieGenreComponent, {
-      data: { name, description, },
-    })
+      data: {
+        Name: name,
+      }
+    });
   }
 
   /**
-   * Opens the director dialog
-   * @param name 
-   * @param bio 
-   * @param birthyear 
-   * @param filmography 
-   * @param image
-   */
-  openDirectorDialog(name: string, bio: string, birthyear: Date, filmography: string, image: string): void {
+  * Opens the director dialog
+  * @param name 
+  * @param bio 
+  * @param birthyear 
+  * @param filmography 
+  * @param image
+  */
+  openDirectorDialog(name: string): void {
     this.dialog.open(MovieDirectorComponent, {
-      data: { name, bio, birthyear, filmography, image },
-    })
+      data: {
+        Name: name,
+      }
+    });
   }
   /**
    * Adds the movie with the assigned id to favorites
@@ -98,15 +88,12 @@ export class MovieCardComponent {
    */
   addToFavorites(movieId: any,) {
     console.log(movieId);
-    this.fetchApiData.addMovie(movieId).subscribe((resp: any) => {
+    this.fetchApiData.addToFavorites(movieId).subscribe((resp: any) => {
 
       console.log(resp);
       this.snackBar.open(`The selected movie has been added to your favorites.`, 'OK', {
         duration: 3000,
-      })
-      setTimeout(function () {
-        window.location.reload()
-      }, 3000);
+      });
       this.getUserFavorites();
     });
   }
@@ -121,11 +108,7 @@ export class MovieCardComponent {
       console.log(resp);
       this.snackBar.open(`The selected movie has been added to your favorites.`, 'OK', {
         duration: 3000,
-      })
-
-      setTimeout(function () {
-        window.location.reload()
-      }, 3000);
+      });
       this.getUserFavorites();
     });
   }
@@ -136,7 +119,6 @@ export class MovieCardComponent {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((res: any) => {
       this.favorites = res.FavoriteMovies;
-      //console.log(this.faves);
       return this.favorites;
     });
   }
