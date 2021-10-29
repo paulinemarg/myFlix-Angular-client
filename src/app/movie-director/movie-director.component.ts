@@ -1,5 +1,5 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 
 @Component({
@@ -9,25 +9,22 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class MovieDirectorComponent implements OnInit {
   directors: any[] = [];
+
   constructor(
     public fetchApiData: FetchApiDataService,
     @Inject(MAT_DIALOG_DATA)
     public data: {
-      name: string,
-      bio: string,
-      birthyear: Date,
-      filmography: string,
-      image: string
+      Name: string;
     }
   ) { }
 
   ngOnInit(): void {
-    this.getADirector();
+    this.getDirectorBio();
   }
-  getADirector(): void {
+
+  getDirectorBio(): void {
     this.fetchApiData.getDirectors().subscribe((response: any) => {
       this.directors = response;
-      // console.log(this.directors);
       return this.directors;
     });
   }
