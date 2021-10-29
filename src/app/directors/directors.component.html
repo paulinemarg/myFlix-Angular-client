@@ -5,8 +5,9 @@
     <div class="directors-container">
       <div *ngFor="let director of directors;">
       <h2 class="subtitle">{{director.Name}}</h2>
+      <img class="image" src={{director.Image}} alt={{director.Name}}>
       <p class="bio">{{director.Bio}} </p>
-      <p>{{director.Filmography}}</p>
+      <p>Filmography: {{director.Filmography}}</p>
       </div>
     </div>
   </div>
