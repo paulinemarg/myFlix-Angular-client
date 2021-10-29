@@ -1,5 +1,9 @@
 .directors-container {
+  background-color: black;
+  color: white;
   text-align: center;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .title {
@@ -12,4 +16,9 @@
 }
 .bio {
   font-size: 16px;
+}
+
+.image {
+  height: 300px;
+  width: 200px;
 }
