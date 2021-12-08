@@ -1,0 +1,12 @@
+@import "~@angular/material/theming";
+@import "./styles.scss";
+
+@include mat-core();
+
+$myFlix-Angular-client-primary: mat-palette($mat-indigo, 50);
+$myFlix-Angular-client-accent: mat-palette($mat-grey);
+$myFlix-Angular-client-warn: mat-palette($mat-red);
+
+$myFlix-Angular-client-theme: mat-dark-theme($myFlix-Angular-client-primary, $myFlix-Angular-client-accent, $myFlix-Angular-client-warn);
+
+@include angular-material-theme($myFlix-Angular-client-theme);
