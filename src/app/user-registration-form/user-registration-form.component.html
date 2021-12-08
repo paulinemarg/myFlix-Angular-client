@@ -8,10 +8,14 @@
         <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username" required>
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password" required>
+        <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password" required [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
       </mat-form-field>
       <mat-form-field>
         <input matInput [(ngModel)]="userData.Email" type="email" placeholder="Email" name="Email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput [(ngModel)]="userData.Birthday" type="date" placeholder="Birthday" name="Birthday">
