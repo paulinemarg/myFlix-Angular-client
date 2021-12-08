@@ -1,24 +1,64 @@
-.directors-container {
-  background-color: black;
-  color: white;
-  text-align: center;
-  display: grid;
-  grid-template-columns: auto auto;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+mat-card {
+  background-color: black !important;
+  border: 2px solid rgb(202, 57, 57);
+  color: #fff;
+  max-width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  font-family: 'Space Mono', monospace;
 }
 
-.title {
-  font-weight: 700;
-  text-align: center;
+mat-card-title {
+  margin: 0 auto;
+}
+
+@supports (display: grid) {
+  .directors-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin: 0;
+  }
 }
 
 .subtitle {
   color: rgb(202, 57, 57);
 }
+
 .bio {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .image {
-  height: 300px;
-  width: 200px;
+  height: 150px;
+  max-width: 120px;
+  float: left;
+  margin-right: 20px;
+}
+
+/* Media queries */
+@media all and (max-width: 500px) {
+  .directors-container {
+    grid-template-columns: 1fr;
+  }
+
+  .image {}
+
+  mat-card-content {
+    flex-wrap: wrap;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .directors-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .directors-container {
+    grid-gap: 10px;
+  }
 }
