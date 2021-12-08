@@ -1,10 +1,9 @@
-<div id="body">
-  <div id="main-content">
-    <mat-dialog-content>
-     <h1>
-        {{data.Name}}
-      </h1>
-      <div *ngFor=" let director of directors">
+<mat-card class="director">
+  <mat-card-header>
+    <mat-card-title>{{data.Name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngFor=" let director of directors">
         <div *ngIf="data.Name == director.Name">
           <img class="image" src={{director.Image}} alt={{director.Name}}>
           <p>
@@ -16,6 +15,5 @@
           <p> Filmography: {{director.Filmography}}</p>
         </div>
       </div>
-    </mat-dialog-content>
-  </div>
-</div>
+  </mat-card-content>
+</mat-card>

@@ -1,9 +1,21 @@
-#body {
-  background-color:  black ;
-  color: #fff;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+.director {
+  max-width: 700px;
+  background-color: black;
+  color: white;
+  font-family: 'Space Mono', monospace;
 }
 
 .image {
-  height: 100px;
-  width: 60px;
+  height: 150px;
+  width: 100px;
+}
+
+mat-card-content {
+  font-size: 18px;
+}
+
+mat-card-title {
+  color: rgb(202, 57, 57);
 }
