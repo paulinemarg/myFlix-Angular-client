@@ -1,13 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   height: 100px;
-  background-color: #000000;
 }
 
-.title {
-  font-size: 24px;
+.logo {
+  max-width: 100%;
+  height: 100px;
+}
+
+.identity {
+  color: rgb(202, 57, 57);
+  margin: 0 auto;
+  padding-top: 35px;
+  font-size: 28px;
+}
+
+.menu {
+  background-color: #000;
+  color: rgb(202, 57, 57);
 }
 
 .links {
@@ -16,10 +30,12 @@
 }
 
 .button {
-  font-size: 18px;
+  font-size: 22px;
+  font-family: 'Space Mono', monospace;
 }
 
-.button:hover {
+.button:hover,
+.identity:hover {
   color: white;
 }
 
@@ -30,9 +46,17 @@
     flex-wrap: wrap;
 
   }
+
   .button {
     font-size: 20px;
-  
+
+  }
+
+  .logo {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100px;
   }
 }
 
@@ -42,14 +66,16 @@
     flex-direction: column;
     justify-content: center;
   }
-  
-  .links {
+
+  .links,
+  .identity {
     align-items: center;
     justify-content: center;
   }
+
   .button {
     font-size: 16px;
-  
+
   }
 }
 
@@ -62,14 +88,15 @@
     height: 200px;
     min-width: 170px;
   }
-  
-  .links {
+
+  .links,
+  .identity {
     display: flex;
     flex-direction: column;
   }
 
   .button {
     font-size: 16px;
-  
+
   }
 }
