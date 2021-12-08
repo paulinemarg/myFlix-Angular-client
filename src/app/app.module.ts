@@ -14,6 +14,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
@@ -27,11 +30,10 @@ import { MovieDirectorComponent } from './movie-director/movie-director.componen
 import { DirectorsComponent } from './directors/directors.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
-import { AuthGuardService } from './auth-guard.service';
 
 // Welcome page is accessible when the user is not logged in.
 const appRoutes: Routes = [
-  { path: 'welcome', component: WelcomePageComponent, canActivate: [AuthGuardService] },
+  { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
   { path: 'directors', component: DirectorsComponent },
   { path: 'genres', component: GenresComponent },
@@ -70,8 +72,11 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatSnackBarModule,
     MatIconModule,
+    MatSliderModule,
+    MatToolbarModule,
+    MatMenuModule,
   ],
-  providers: [AuthGuardService],
+  providers: [MovieCardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
