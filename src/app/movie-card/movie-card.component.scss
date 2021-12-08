@@ -1,43 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
 .container {
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: baseline;
   gap: 50px 50px;
   margin: 100px;
-  background-color: #fff;
+  background-color: #000;
+}
+
+.main-title {
+  text-align: center;
+  color: rgb(202, 57, 57);
+  font-size: 30px;
+  font-weight: 600;
+  padding-top: 40px;
 }
 
 .items {
   display: flex;
   flex-direction: column;
-  align-items: center ;
+  align-items: center;
   text-align: center;
   background-color: black;
-  color: #c04a41;
-  width:300px;
+  color: rgb(202, 57, 57);
+  width: 300px;
   height: 500px;
-  border-radius: 10px 10px 10px 10px;
+  border: 2px solid #f1f1f1;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+
   &:hover {
     transform: scale(1.05);
+    opacity: 0.8;
   }
 }
 
 .favorites {
-  color: rgba(red, 0.75);
+  color: rgba(rgb(202, 57, 57), 0.75);
+
   &:hover {
     transform: scale(1.1);
   }
 }
 
 .image {
-  width:200px;
+  width: 200px;
   height: 300px;
 }
 
 .title {
-  height:70px;
+  font-family: 'Space Mono',
+    monospace;
+  height: 70px;
   margin-top: 20px;
   color: white;
 }
@@ -50,13 +66,15 @@
   color: #fff;
 }
 
-.button:hover, .button1:hover, .button2:hover {
-  color: red;
+.button:hover,
+.button1:hover,
+.button2:hover {
+  color: rgb(202, 57, 57);
 }
 
 @media (max-width: 950px) {
   .container {
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -65,7 +83,7 @@
     background-color: #000000;
   }
 }
- 
+
 @media (max-width: 500px) {
   .container {
     flex-direction: column;
