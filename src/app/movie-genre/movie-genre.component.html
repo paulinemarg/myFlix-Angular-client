@@ -1,14 +1,12 @@
-<div id="body">
-  <div id="main-content">
-    <mat-dialog-content>
-      <h1>
-        {{data.Name}}
-      </h1>
-      <div *ngFor=" let genre of genres">
+<mat-card class="genre">
+  <mat-card-header>
+    <mat-card-title>{{data.Name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngFor=" let genre of genres">
         <p *ngIf="data.Name == genre.Name">
           {{genre.Description}}
         </p>
       </div>
-    </mat-dialog-content>
-  </div>
-</div>
+  </mat-card-content>
+</mat-card>
