@@ -1,9 +1,13 @@
+mat-card {
+  background-color: #000;
+  color: rgb(202, 57, 57);
+}
+
 mat-card-header {
   width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid black;
   margin: auto;
   margin-bottom: 20px;
 }
