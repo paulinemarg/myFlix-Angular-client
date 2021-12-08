@@ -1,10 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
 .synopsis {
+  max-width: 700px;
   background-color: black;
   color: white;
+  font-family: 'Space Mono', monospace;
 }
 
-.star {
-  display: flex;
-  flex-direction: column;
+mat-card-title {
+  color: rgb(202, 57, 57);
+}
+
+mat-card-content {
+  font-size: 18px;
+}
+
+mat-card-subtitle,
+mat-icon {
   color: rgb(236, 201, 104);
 }
