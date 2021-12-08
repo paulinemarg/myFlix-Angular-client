@@ -1,16 +1,20 @@
 <app-navbar></app-navbar>
 <div id="main-container">
-  <div id="content">
-    <h1 class="title">Genres</h1>
-    <div class="genres-container">
+  <mat-card>
+    <mat-card-title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="318" height="79" viewBox="0 0 318 79">
+      <text id="Genres" transform="translate(0 62)" fill="#707070" font-size="66" font-family="Phosphate-Inline, Phosphate"><tspan x="0" y="0">Genres</tspan></text>
+      </svg>
+    </mat-card-title>
+    <mat-card-content class="genres-container">
       <div *ngFor="let genre of genres;">
-        <h2 class="subtitle">
-        {{genre.Name}}
-        </h2>
+        <mat-card-subtitle>
+        {{genre.Name}} 
+        </mat-card-subtitle>
         <p class="content">
         {{genre.Description}}
         </p>
       </div>
-    </div>
-  </div>
+    </mat-card-content>
+  </mat-card>
 </div>
