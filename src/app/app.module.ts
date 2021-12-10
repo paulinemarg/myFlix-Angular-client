@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule } from '@angular/forms';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
@@ -75,6 +76,7 @@ const appRoutes: Routes = [
     MatSliderModule,
     MatToolbarModule,
     MatMenuModule,
+    MatExpansionModule,
   ],
   providers: [MovieCardComponent],
   bootstrap: [AppComponent]
