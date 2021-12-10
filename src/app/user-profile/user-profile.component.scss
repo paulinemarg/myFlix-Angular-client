@@ -1,39 +1,28 @@
-.container {
-  display: flex;
-  flex-direction: column;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+mat-panel-title {
+  font-family: 'Space Mono', monospace;
 }
 
-.div-profile {
+mat-panel-description {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  flex-direction: row-reverse;
 }
 
-.favorites-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;  
-  background-color: black;
-  color: #fff;
-  margin-bottom: 20px;
-  padding:20px;
-  font-size: 30px;
-  margin-right: 20px;
-  margin-left: 20px;
+mat-card {
+  background-color: #000;
 }
 
-.favorites-list {
-  display: flex; 
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: baseline;
-  margin: 20px;
-  max-width: 100%;
-  background-color: black;
+mat-expansion-panel {
+  border: 1px solid rgb(202, 57, 57);
+}
+
+.button-edit:hover {
+  color: rgb(65, 155, 103);
+}
+
+.button-delete:hover {
+  color: rgb(202, 57, 57);
 }
 
 .favorites {
@@ -44,25 +33,19 @@
   width: 230px;
   height: 370px;
   background-color: black;
-  color: #fff4e6;
+  color: #fff;
   margin: 20px;
   padding: 5px;
 }
 
-.user-info {
+.favorites-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  width:50%;
-  background-color: black;
-  color: #fff4e6;
-  text-align: center;
-}
-
-.info {
-  font-size: 20px;
-  line-height: 40px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: 20px;
+  max-width: 100%;
 }
 
 .title {
@@ -71,35 +54,11 @@
   height: 75px;
   color: #fff4e6;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
-
-.subtitle {
-  color: #fff4e6;
-  text-align: center;
-  height: 25px;
-}
-span {
-  font-size: 22px;
-  margin-right: 10px;
-}
-
-.button-edit {
-  background-color: #c04040;
-  color: #fff;
-  margin: 10px;
-}
-
-.button-delete {
-  background-color: #c04040;
-  color: #fff;
-  margin: 10px;
-}
-
-
 
 .remove-icon {
-  color: #fff4e6 ;
+  color: #fff;
   cursor: pointer;
   right: -15px;
   top: 10px;
@@ -109,14 +68,18 @@ span {
   font-size: xx-large;
 }
 
+.remove-icon:hover {
+  color: rgb(202, 57, 57);
+}
+
 .image {
-  width:150px;
-  height: 200px;
+  width: 200px;
+  height: 250px;
 }
 
 @media (max-width: 500px) {
   .user-info {
-    width:100%;
+    width: 100%;
     margin: 10px;
   }
 }
