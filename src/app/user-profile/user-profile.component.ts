@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatAccordion } from '@angular/material/expansion';
 import { EditUserProfileComponent } from '../edit-user-profile/edit-user-profile.component';
 
 @Component({
@@ -15,6 +16,8 @@ export class UserProfileComponent implements OnInit {
   movies: any[] = [];
   favoriteMovies: any[] = [];
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
+  @ViewChild(MatAccordion)
+  accordion!: MatAccordion;
 
   constructor(
     public dialog: MatDialog,
