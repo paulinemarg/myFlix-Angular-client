@@ -2,23 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 
 mat-card {
-  background-color: #000;
+  background-image: url(/assets/img/background.jpg); // Photo by Anh Tuan To on Unsplash
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   font-family: 'Space Mono', monospace;
 }
 
-.content {
-  text-align: center;
-  margin: 0 auto;
-  max-width: 800px;
-}
-
 mat-card-content {
   font-size: 22px;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
 }
 
 mat-card-subtitle {
-  color: rgb(202, 57, 57);
+  color: #fff;
   font-size: 30px;
   margin-top: 30px;
   text-align: center;
