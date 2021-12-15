@@ -10,12 +10,9 @@
   background-color: #000;
 }
 
-h1 {
-  padding: 1em;
-  background-image: url("../assets/img/banner.jpg"); // Background vector created by starline - www.freepik.com
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+h1 img {
+  width: 100%;
+  height: 200px;
 }
 
 .main-title {
