@@ -1,8 +1,10 @@
 # MyFlixAngularClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/paulinemarg/myFlix-Angular-client"> <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/paulinemarg/myFlix-Angular-client?color=green"> <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/paulinemarg/myFlix-Angular-client?color=yellow"> <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/paulinemarg/myFlix-Angular-client?style=plastic">
 
 ![myflix-angular](/myflix-angular.png)
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
 ## Description
 
@@ -10,8 +12,18 @@ This is a single-page application build using Angular that is connected to the [
 
 ## Technologies
 
-This app is built using the MEAN stack of technlogies, (MongoDB, Angular, Express.js, Node.js. The app uses Angular Material throughout as well.
+This app is built using the MEAN stack of technlogies: 
+> MongoDB
+> 
+> Angular 
+> 
+> Express.js
+> 
+> Node.js
 
+## Design
+
+I used angular material to design the app: MatExpansion, MatDialog, MatSnackBar, MatToolbar, MatIcon, MatCard, etc...
 
 ## Setting up the tools:
 
@@ -49,9 +61,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
 
