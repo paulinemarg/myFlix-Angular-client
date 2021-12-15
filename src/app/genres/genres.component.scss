@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 
+#main-container {
+  background-color: rgb(163, 159, 159);
+}
+
 mat-card {
-  background-image: url("../assets/img/background.jpg"); // Photo by Anh Tuan To on Unsplash
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: #fff;
+  background-color: #000;
   font-family: 'Space Mono', monospace;
 }
 
@@ -19,7 +20,7 @@ mat-card-content {
 }
 
 mat-card-subtitle {
-  color: #fff;
+  color: rgb(202, 57, 57);
   font-size: 30px;
   margin-top: 30px;
   text-align: center;
