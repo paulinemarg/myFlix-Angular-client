@@ -23,7 +23,7 @@ This app is built using the MEAN stack of technlogies:
 
 ## Design
 
-I used angular material to design the app: MatExpansion, MatDialog, MatSnackBar, MatToolbar, MatIcon, MatCard, etc...
+I used angular material to design the app, such as: MatExpansion, MatDialog, MatSnackBar, MatToolbar, MatIcon, MatCard, etc...
 
 ## Setting up the tools:
 
